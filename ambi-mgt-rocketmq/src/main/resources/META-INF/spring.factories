@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.liuxn.ambi.rocketmq.runner.ConsumerLoader,\
+com.liuxn.ambi.rocketmq.runner.ProducerLoader

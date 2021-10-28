@@ -1,0 +1,11 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: ambi-test
+
+
+rocket:
+  mq:
+    address: 192.168.200.214:9876

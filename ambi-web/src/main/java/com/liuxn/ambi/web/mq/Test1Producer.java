@@ -1,6 +1,6 @@
 package com.liuxn.ambi.web.mq;
 
-import com.liuxn.ambi.rocketmq.ProducerManager;
+import com.liuxn.ambi.rocketmq.BaseProducer;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @date 2021/10/27
  */
 @Component
-public class Test1Producer extends ProducerManager {
+public class Test1Producer extends BaseProducer {
 
     @Override
     public String groupName() {

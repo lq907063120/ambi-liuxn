@@ -1,6 +1,6 @@
 package com.liuxn.ambi.rocketmq.runner;
 
-import com.liuxn.ambi.rocketmq.ProducerManager;
+import com.liuxn.ambi.rocketmq.BaseProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.MQAdmin;
@@ -47,7 +47,7 @@ public class ProducerLoader implements ApplicationContextAware, InitializingBean
     @Override
     public void afterPropertiesSet() throws Exception {
         try {
-            Map<String, ProducerManager> producerMap = applicationContext.getBeansOfType(ProducerManager.class)
+            Map<String, BaseProducer> producerMap = applicationContext.getBeansOfType(BaseProducer.class)
                     .entrySet().stream().filter(entry -> {
                         return !ScopedProxyUtils.isScopedTarget(entry.getKey());
                     }).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
@@ -61,7 +61,7 @@ public class ProducerLoader implements ApplicationContextAware, InitializingBean
             if (StringUtils.isBlank(ADDRESS)) {
                 throw new NullPointerException("rocket.mq.address not configured");
             }
-            for (Map.Entry<String, ProducerManager> entry : producerMap.entrySet()) {
+            for (Map.Entry<String, BaseProducer> entry : producerMap.entrySet()) {
                 initProducer(entry.getKey(), entry.getValue());
             }
             log.info(">> 初始化rocket mq producer 完毕,producer size:[" + producerMap.size() + "]");
@@ -76,9 +76,9 @@ public class ProducerLoader implements ApplicationContextAware, InitializingBean
      * @param beanName bean名成
      * @param bean     类对象
      *
-     * @throws Exception
+     * @throws Exception 初始化生产者异常
      */
-    private void initProducer(String beanName, ProducerManager bean) throws Exception {
+    private void initProducer(String beanName, BaseProducer bean) throws Exception {
         String groupName = bean.groupName();
         int retryCount = bean.retryCount() == null ? 2 : bean.retryCount();
         if (StringUtils.isBlank(groupName)) {

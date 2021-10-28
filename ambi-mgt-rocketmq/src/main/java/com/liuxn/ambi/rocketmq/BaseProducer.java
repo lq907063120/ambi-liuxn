@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
  * @author liuxn
  * @date 2021/10/27
  */
-public abstract class ProducerManager {
+public abstract class BaseProducer {
 
     /**
      * 生产组名

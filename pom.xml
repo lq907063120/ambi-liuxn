@@ -11,6 +11,7 @@
     <modules>
         <module>ambi-web</module>
         <module>ambi-mgt-rocketmq</module>
+        <module>ambi-mgt-rabbitmq</module>
     </modules>
 
     <properties>

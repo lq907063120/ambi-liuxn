@@ -9,6 +9,8 @@ import org.apache.rocketmq.common.message.Message;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * 生成者配置
+ *
  * @author liuxn
  * @date 2021/10/27
  */

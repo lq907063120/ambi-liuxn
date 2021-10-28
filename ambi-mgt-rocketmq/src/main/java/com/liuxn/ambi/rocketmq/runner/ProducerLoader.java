@@ -22,6 +22,8 @@ import java.util.stream.Collectors;
 
 
 /**
+ * 生产者 初始类
+ *
  * @author liuxn
  * @date 2021/10/28
  */

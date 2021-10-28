@@ -3,6 +3,8 @@ package com.liuxn.ambi.rocketmq;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 
 /**
+ * 消费者监听
+ *
  * @author liuxn
  * @date 2021/10/27
  */

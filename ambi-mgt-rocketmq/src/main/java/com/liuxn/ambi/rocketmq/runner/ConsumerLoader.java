@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.MQAdmin;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
-import org.apache.rocketmq.client.exception.MQClientException;
 import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
@@ -23,6 +22,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * 消费者初始类
+ *
  * @author liuxn
  * @date 2021/10/27
  */
@@ -33,11 +34,13 @@ public class ConsumerLoader implements ApplicationContextAware, SmartInitializin
     private ConfigurableApplicationContext applicationContext;
 
 
+    /**
+     * rocket mq  地址或者集群地址 ip+port;ip+port
+     */
     @Value("${rocket.mq.address}")
     private String ADDRESS;
 
     private List<DefaultMQPushConsumer> consumerList = new ArrayList<>();
-
 
     @Override
     public void afterSingletonsInstantiated() {
@@ -62,8 +65,15 @@ public class ConsumerLoader implements ApplicationContextAware, SmartInitializin
         }
     }
 
-
-    private void subscribe(String beanName, IConsumerManager bean) throws MQClientException {
+    /**
+     * 启动消费者监听
+     *
+     * @param beanName 消费者类名
+     * @param bean     消费者实现类
+     *
+     * @throws Exception 消费者监听异常
+     */
+    private void subscribe(String beanName, IConsumerManager bean) throws Exception {
         String topic = bean.topic();
         String tags = StringUtils.isBlank(bean.tags()) ? "*" : bean.tags();
         String groupName = bean.groupName();
@@ -87,7 +97,6 @@ public class ConsumerLoader implements ApplicationContextAware, SmartInitializin
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = (ConfigurableApplicationContext) applicationContext;
     }
-
 
     @Override
     public void destroy() throws Exception {

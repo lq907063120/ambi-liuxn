@@ -1,4 +1,4 @@
-package com.liuxn.ambi.rocketmq;
+package com.liuxn.ambi.mgt.rocketmq;
 
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 

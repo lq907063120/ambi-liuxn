@@ -1,6 +1,6 @@
 package com.liuxn.ambi.web.mq;
 
-import com.liuxn.ambi.rocketmq.IConsumerManager;
+import com.liuxn.ambi.mgt.rocketmq.IConsumerManager;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;

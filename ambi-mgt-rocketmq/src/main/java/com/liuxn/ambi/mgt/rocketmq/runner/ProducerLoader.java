@@ -1,6 +1,6 @@
-package com.liuxn.ambi.rocketmq.runner;
+package com.liuxn.ambi.mgt.rocketmq.runner;
 
-import com.liuxn.ambi.rocketmq.BaseProducer;
+import com.liuxn.ambi.mgt.rocketmq.BaseProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.MQAdmin;

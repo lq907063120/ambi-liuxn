@@ -1,6 +1,6 @@
-package com.liuxn.ambi.rocketmq;
+package com.liuxn.ambi.mgt.rocketmq;
 
-import com.liuxn.ambi.rocketmq.runner.ProducerLoader;
+import com.liuxn.ambi.mgt.rocketmq.runner.ProducerLoader;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;

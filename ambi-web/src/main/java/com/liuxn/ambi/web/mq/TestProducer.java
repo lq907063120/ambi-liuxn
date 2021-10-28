@@ -1,6 +1,6 @@
 package com.liuxn.ambi.web.mq;
 
-import com.liuxn.ambi.rocketmq.BaseProducer;
+import com.liuxn.ambi.mgt.rocketmq.BaseProducer;
 import org.springframework.stereotype.Component;
 
 /**

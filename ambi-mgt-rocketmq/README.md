@@ -90,7 +90,7 @@ rocket:
 
 5、group topic tag [使用规范]<https://help.aliyun.com/document_detail/43523.html?spm=a2c4g.11186623.2.15.21d11da9tr3NbG>
 
-6、引入jar后。 Springboot 启动时自动扫描并数初始链接
+6、引入jar后。 Springboot 启动时自动扫描并初始rocketmq链接
 
 
 

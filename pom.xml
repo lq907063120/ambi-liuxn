@@ -10,8 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>ambi-web</module>
-        <module>ambi-mgt-rocketmq</module>
-        <module>ambi-mgt-rabbitmq</module>
+        <module>ambi-mgt</module>
         <module>web-shiro</module>
     </modules>
 
